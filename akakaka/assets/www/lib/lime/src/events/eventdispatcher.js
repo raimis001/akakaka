@@ -85,7 +85,7 @@ lime.events.EventDispatcher.prototype.swallow = function(e, type, handler) {
     this.swallows[id].push([e.targetObject, type, handler]);
     //console.log('listen');
     goog.events.listen(e.targetObject, type, goog.nullFunction);
-};
+}
 
 /**
  * Handle DOM event
