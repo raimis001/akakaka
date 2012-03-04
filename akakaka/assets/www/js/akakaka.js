@@ -23,11 +23,16 @@ goog.require('lime.Sprite');
 goog.require('lime.GlossyButton');
 goog.require('lime.Circle');
 goog.require('lime.RoundedRect');
+goog.require('lime.Label');
+
 
 goog.require('goog.math');
 
 goog.require('akakaka.sceneIntro');
 goog.require('akakaka.sceneGame');
+goog.require('akakaka.panelPopup');
+goog.require('akakaka.panelMoney');
+
 
 akakaka.WIDTH = 960;
 akakaka.HEIGHT  = 680;

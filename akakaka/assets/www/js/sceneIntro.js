@@ -13,11 +13,13 @@ akakaka.sceneIntro = function() {
  
   var bt_start = new lime.Sprite()
     .setFill(new lime.fill.Image('media/images/bt_game.png'))
-    .setPosition(-150,250)
   ;
-  layer.appendChild(bt_start);
+  var button = new lime.Button(bt_start)
+    .setPosition(-150,250)
   
-  goog.events.listen(bt_start, ['mousedown', 'touchstart'], function() {
+  layer.appendChild(button);
+  
+  goog.events.listen(button, lime.Button.Event.CLICK, function() {
     
     akakaka.beginGame();
   });

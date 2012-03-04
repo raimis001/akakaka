@@ -958,3 +958,5 @@ goog.addDependency('../../third_party/closure/goog/silverlight/supporteduseragen
 goog.addDependency('../../../../js/akakaka.js', ['akakaka'], ['lime.Director', 'lime.Layer']);
 goog.addDependency('../../../../js/sceneIntro.js', ['akakaka.sceneIntro'], ['lime.Scene']);
 goog.addDependency('../../../../js/sceneGame.js', ['akakaka.sceneGame'], ['lime.Scene']);
+goog.addDependency('../../../../js/panelPopup.js', ['akakaka.panelPopup'], ['lime.Sprite']);
+goog.addDependency('../../../../js/panelMoney.js', ['akakaka.panelMoney'], ['lime.Sprite']);

@@ -133,6 +133,7 @@ lime.animation.Animation.prototype.play = function() {
  * Stop playing the animstion
  */
 lime.animation.Animation.prototype.stop = function() {
+  
     if (this.status_ != 0) {
         var targets = this.initTargets_;
         if (this.useTransitions() && this.clearTransition) {
