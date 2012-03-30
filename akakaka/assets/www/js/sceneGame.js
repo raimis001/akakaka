@@ -37,6 +37,28 @@ akakaka.sprites = {
     x:364, 
     y:472
   },
+  magazines:{
+    img:'sp_magazines.png',
+    img1:'sp_magazines1.png',
+    caption:'\u017durn\u0101li',
+    note:'Ar autorties\u012bb\u0101m aizsarg\u0101ts materi\u0101ls, kuru var publiski deklam\u0113t vai nesankcion\u0113ti patapin\u0101t.',
+    note1:'un kaitniecisk\u0101s darb\u012bbas avota sadedzin\u0101\u0161ana.',
+    price:10,
+    active:true,
+    x:624, 
+    y:564
+  },
+  bed:{
+    img:'sp_bed.png',
+    img1:'sp_bed1.png',
+    caption:'Gulta',
+    note:'Lok\u0101cija, kur\u0101 var pavairot potenci\u0101los autorties\u012bbu p\u0101rk\u0101p\u0113jus.',
+    note1:'par katru jauno eksempl\u0101ru.',
+    price:125,
+    active:true,
+    x:580, 
+    y:478
+  },
   table:{
     img:'sp_table.png',
     x:243, 
@@ -171,27 +193,6 @@ akakaka.sprites = {
     img:'sp_curtain.png',
     x:220, 
     y:57
-  },
-  magazines:{
-    img:'sp_magazines.png',
-    img1:'sp_magazines1.png',
-    caption:'\u017durn\u0101li',
-    note:'Ar autorties\u012bb\u0101m aizsarg\u0101ts materi\u0101ls, kuru var publiski deklam\u0113t vai nesankcion\u0113ti patapin\u0101t.',
-    note1:'un kaitniecisk\u0101s darb\u012bbas avota sadedzin\u0101\u0161ana.',
-    price:10,
-    active:true,
-    x:624, 
-    y:564
-  },
-  bed:{
-    img:'sp_bed.png',
-    img1:'sp_bed1.png',
-    caption:'Gulta',
-    note:'Lok\u0101cija, kur\u0101 var pavairot potenci\u0101los autorties\u012bbu p\u0101rk\u0101p\u0113jus.',
-    note1:'par katru jauno eksempl\u0101ru.',
-    price:125,
-    x:580, 
-    y:478
   },
   pilow:{
     img:'sp_pilow.png',
