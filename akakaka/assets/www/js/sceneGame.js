@@ -180,6 +180,7 @@ akakaka.sprites = {
     note1:'L\u012bdzekl\u012b atrodamo materi\u0101lu nodo\u0161ana ekspertu anal\u012bzei, un to izp\u0113te neatkar\u012bgi no to priv\u0101tuma pak\u0101pes.',
     price:0,
     active:true,
+    need:['toilet'],
     x:296, 
     y:510
   },
@@ -190,6 +191,7 @@ akakaka.sprites = {
     note1:'Sods netiek \u0161oreiz piem\u0113rots, bet l\u012bdzeklis tiek konfisc\u0113ts uz nenoteiktu laiku un nodots ekspertu grupas rok\u0101s.',
     price:0,
     active:true,
+    parent:'comp',
     x:311, 
     y:484
   },
