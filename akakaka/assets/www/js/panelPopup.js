@@ -64,7 +64,7 @@ akakaka.panelPopup = function(vObject) {
       .setFontSize(20)
       .setFontWeight("bold")
       .setFontColor('#FFFFFF')
-      .setAlign('left')
+      .setAlign('center')
      
     panel.appendChild(label);
   }
@@ -72,7 +72,7 @@ akakaka.panelPopup = function(vObject) {
   var bt_up = new lime.Sprite()
     .setFill('media/images/bt_pay.png')
   var button = new lime.Button(bt_up)
-    .setPosition(50,80)
+    .setPosition(0,120)
 
   
   panel.appendChild(button);

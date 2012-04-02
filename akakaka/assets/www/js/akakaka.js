@@ -43,6 +43,7 @@ akakaka.start = function(){
 	akakaka.director = new lime.Director(document.getElementById("context-game"),akakaka.WIDTH,akakaka.HEIGHT);
 	akakaka.director.makeMobileWebAppCapable();
   
+  akakaka.game  = new akakaka.sceneGame();
   akakaka.intro = new akakaka.sceneIntro();
 	akakaka.director.replaceScene(akakaka.intro);
   
@@ -50,7 +51,6 @@ akakaka.start = function(){
 }
 
 akakaka.beginGame = function() {
-  akakaka.game = new akakaka.sceneGame();
 	akakaka.director.replaceScene(akakaka.game, lime.transitions.SlideInRight);
 };
 

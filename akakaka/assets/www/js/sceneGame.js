@@ -59,6 +59,65 @@ akakaka.sprites = {
     x:580, 
     y:478
   },
+  baznica:{
+    img:'sp_church.png',
+    img1:'sp_church1.png',
+    caption:'Bazn\u012bca',
+    note:'Bazn\u012bcas spredi\u0137\u012b var b\u016bt atsauces uz ar autorties\u012bb\u0101m aizsarg\u0101tiem materi\u0101liem. Rekomend\u0113jam publisko pas\u0101kumu ierobe\u017eo\u0161anu.',
+    note1:'Bazn\u012bcas publisko pas\u0101kumu ierobe\u017eo\u0161ana.',
+    price:0,
+    active:true,
+    parent:'glass',
+    x:445, 
+    y:95
+  },
+  akmens:{
+    img:'sp_grave.png',
+    img1:'sp_grave1.png',
+    caption:'Kapakme\u0146i',
+    note:'Identific\u0113ts, ka piemi\u0146as teksti uz kapakme\u0146iem satur ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus.',
+    note1:'Likvid\u0113t likumu p\u0101rk\u0101pu\u0161os objektu laukumus.',
+    price:0,
+    active:true,
+    parent:'glass',
+    x:416, 
+    y:235
+  },
+  zogs:{
+    img:'sp_fence.png',
+    img1:'sp_fence1.png',
+    caption:'S\u0113ta',
+    note:'Platforma, uz kuras var publiski demonstr\u0113t un izplat\u012bt ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus.',
+    note1:'un objekta likvid\u0101cija.',
+    price:40,
+    active:true,
+    parent:'glass',
+    x:265, 
+    y:216
+  },
+  auto: {
+    img:'sp_auto.png',
+    caption:'Ma\u0161\u012bna',
+    note:'L\u012bdzeklis, ar kuru var p\u0101rvad\u0101t datu nes\u0113jus, kuros var atrasties ar autorties\u012bb\u0101m aizsarg\u0101ti materi\u0101li.',
+    note1:'un kaitniecisk\u0101 l\u012bdzek\u013ca konfisk\u0101cija.',
+    price:105,
+    active:true,
+    parent:'glass',
+    x:260, 
+    y:260
+  },
+  glass:{
+    img:'sp_glass.png',
+    img1:'sp_glass1.png',
+    caption:'Logs',
+    note:'J\u016bsu dro\u0161\u012bbai, lai j\u016bs neapdraud\u0113tu likump\u0101rk\u0101p\u0113ja kaitniecisk\u0101s darb\u012bbas publiski demonstr\u0113jot ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus, rekomend\u0113jam loga likvid\u0101ciju.',
+    note1:'Objekta caurskat\u0101m\u012bbas nov\u0113r\u0161ana.',
+    price:0,
+    active:true,
+    x:243, 
+    y:57,
+    need:['akmens','baznica','zogs','auto']
+  },
   table:{
     img:'sp_table.png',
     x:243, 
@@ -164,8 +223,8 @@ akakaka.sprites = {
     note1:'un att\u0113la atpaz\u012bstam\u012bbas nov\u0113r\u0161ana.',
     price:7,
     active:true,
-    x:178, 
-    y:392
+    x:168, 
+    y:375
   },
   poster2:{
     img:'sp_post2.png',
@@ -175,8 +234,8 @@ akakaka.sprites = {
     note1:'un att\u0113la atpaz\u012bstam\u012bbas nov\u0113r\u0161ana.',
     price:5,
     active:true,
-    x:193, 
-    y:349
+    x:186, 
+    y:329
   },
   poster3:{
     img:'sp_post3.png',
@@ -186,13 +245,8 @@ akakaka.sprites = {
     note1:'un att\u0113la atpaz\u012bstam\u012bbas nov\u0113r\u0161ana.',
     price:5,
     active:true,
-    x:182, 
-    y:308
-  },
-  curtain:{
-    img:'sp_curtain.png',
-    x:220, 
-    y:57
+    x:170, 
+    y:290
   },
   pilow:{
     img:'sp_pilow.png',
@@ -309,7 +363,7 @@ akakaka.sprites = {
     note1:'un kaitniecisk\u0101 l\u012bdzek\u013ca likvid\u0101cija.',
     price:110,
     active:true,
-    x:788, 
+    x:788,
     y:273
   },
   chair:{
@@ -326,39 +380,13 @@ akakaka.sprites = {
     active:true,
     x:476, 
     y:409
+  },
+  curtain:{
+    img:'sp_curtain.png',
+    x:220, 
+    y:57
   }
 };
-/*
- * 
- * 
- 
-	"note89":"Zirnek\u013cu t\u012bkls",
-	"note90":"Uz \u0161o objektu neattiecas nek\u0101di likump\u0101rk\u0101pumi.",
-	"note91":"Netiek piem\u0113roti nek\u0101di soda m\u0113ri.",
-
-	"note92":"Ma\u0161\u012bna",
-	"note93":"L\u012bdzeklis, ar kuru var p\u0101rvad\u0101t datu nes\u0113jus, kuros var atrasties ar autorties\u012bb\u0101m aizsarg\u0101ti materi\u0101li.",
-	"note94":"105 LVL un kaitniecisk\u0101 l\u012bdzek\u013ca konfisk\u0101cija.",
-
-	"note95":"Bazn\u012bca",
-	"note96":"Bazn\u012bcas spredi\u0137\u012b var b\u016bt atsauces uz ar autorties\u012bb\u0101m aizsarg\u0101tiem materi\u0101liem. Rekomend\u0113jam publisko pas\u0101kumu ierobe\u017eo\u0161anu.",
-	"note97":"Bazn\u012bcas publisko pas\u0101kumu ierobe\u017eo\u0161ana.",
-
-	"note98":"Kapakme\u0146i",
-	"note99":"Identific\u0113ts, ka piemi\u0146as teksti uz kapakme\u0146iem satur ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus.",
-	"note111":"Likvid\u0113t likumu p\u0101rk\u0101pu\u0161os objektu laukumus.",
-
-	"note112":"S\u0113ta",
-	"note113":"Platforma, uz kuras var publiski demonstr\u0113t un izplat\u012bt ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus.",
-	"note114":"40 LVL sods un objekta likvid\u0101cija.",
-
-	"note115":"Logs",
-	"note116":"J\u016bsu dro\u0161\u012bbai, lai j\u016bs neapdraud\u0113tu likump\u0101rk\u0101p\u0113ja kaitniecisk\u0101s darb\u012bbas publiski demonstr\u0113jot ar autorties\u012bb\u0101m aizsarg\u0101tus materi\u0101lus, rekomend\u0113jam loga likvid\u0101ciju.",
-	"note117":"Objekta caurskat\u0101m\u012bbas nov\u0113r\u0161ana."
-
-
- */
-
 akakaka.sceneGame = function() {
   lime.Scene.call(this); 
   
@@ -428,6 +456,23 @@ akakaka.sceneGame.prototype.itemsClick = function(e) {
   var target = e.currentTarget;
   //target.sp_id
   var sp = this.findObject(target.sp_id);
+  
+  if (sp.parent) {
+    var pr = this.findObject(sp.parent);
+    if (pr) {
+      var idx = pr.need.indexOf(target.sp_id);
+      if (idx > -1) {
+        console.log('delete need ' + idx);
+        pr.need.splice(idx,1);
+      }
+      
+      //console.log(pr.need.indexOf('baznica'));
+    }
+  }
+  if ((sp.need) && (sp.need.length) ) {
+    console.log(sp.need);
+    return;
+  }
   if ((!sp) || (!target.active)) return;
   
   e.event.stopPropagation();
@@ -435,7 +480,7 @@ akakaka.sceneGame.prototype.itemsClick = function(e) {
   var t = this;
   e.swallow(['mouseup','touchend'],function(e){
     if (target.hitTest(e)) {
-      console.log(t);
+      //console.log(t);
       
       var pop = new akakaka.panelPopup(target.sp_id);
       t.popup.appendChild(pop);
@@ -448,6 +493,7 @@ akakaka.sceneGame.prototype.itemsClick = function(e) {
           else target.setHidden(true);
           
         target.active = false;
+        goog.events.removeAll(target);
         
         if (sp.price) akakaka.MONEY += sp.price;
         t.money.setMoney(akakaka.MONEY);
