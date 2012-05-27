@@ -1,29 +1,155 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AkaKaka</title>
-  <script type="text/javascript" charset="utf-8" src="lib/phonegap.js"></script>
-	<script type="text/javascript" charset="utf-8" src="lib/closure/closure/goog/base.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/akakaka.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Akakaka</title>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
   
-<script type="text/javascript">
+	<script type="text/javascript" src="lib/easeljs.js"></script>
+	<script type="text/javascript" src="lib/preloadjs.js"></script>
+	<script type="text/javascript" src="lib/tweenjs.js"></script>
+  
+	<script type="text/javascript" src="lib/phonegap.js"></script>
 
-    document.addEventListener("deviceready", onDeviceReady, false);
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/loader.js"></script>
+  <script type="text/javascript" src="js/gameButton.js"></script>
+  <script type="text/javascript" src="js/gameScene.js"></script>
+  <script type="text/javascript" src="js/gameSprite.js"></script>
 
+  
+	<script type="text/javascript">
+  
+    document.addEventListener("deviceready",onDeviceReady, false);
     function onDeviceReady() {
-        document.addEventListener("backbutton", onBackKeyDown, false);
+      //document.addEventListener("backbutton", onBackKeyDown, false);
+      console.log('Device is ready');
     }
-
     function onBackKeyDown() {
-      if (!akaka.endGame()) device.exitApp();
+      destroy();
     }
-
-</script>
     
+  
+	var canvas;
+	var stage;
+
+	var update = true;
+  function destroy() {
+    
+  }
+
+	function init() {
+    console.log('Init');
+    
+		// create stage and point it to the canvas:
+		canvas = document.getElementById("gameCanvas");
+
+		stage = new Stage(canvas);
+    Touch.enable(stage);
+    
+		// enabled mouse over / out events
+		stage.enableMouseOver(10);
+    
+		// load the source image:
+		var image = new Image();
+		image.src = "media/images/aka_st.png";
+		image.onload = handleImageLoad;
+	}
+
+  
+	function handleImageLoad(event) {
+		var image = event.target;
+		var bitmap;
+		var container = new Container();
+		stage.addChild(container);
+
+    bitmap = new Bitmap(image);
+    container.addChild(bitmap);
+    
+    loaderBar = new Loader();
+    stage.addChild(loaderBar);
+		stage.update();
+
+    var manifest = new Array();
+    for (var s in sprites) {
+      var sp = sprites[s];
+      manifest.push({src:'media/images/' + sp.img, id:s});
+      if (sp.img1)
+        manifest.push({src:'media/images/' + sp.img1, id:s + '_1'});
+    }
+    //trace(manifest);
+    manifest.push({src:'media/images/bt_game.png',  id:'bt_game'});
+    manifest.push({src:'media/images/bt_help.png',  id:'bt_help'});
+    manifest.push({src:'media/images/bt_pay.png',   id:'bt_pay'});
+    manifest.push({src:'media/images/aka_bg.png',   id:'aka_bg'});
+
+    images = {};
+
+    preload = new PreloadJS();
+    preload.onProgress = handleProgress;
+    preload.onComplete = handleLoadComplete;
+    preload.onFileLoad = handleFileLoad;
+    preload.loadManifest(manifest);
+
+	}
+  
+  function handleProgress(event) {
+    loaderBar.progress(event.loaded);
+  }
+  
+  function handleLoadComplete(event) {
+    stage.removeChild(loaderBar)
+		//Ticker.addListener(window);
+    
+    Ticker.setFPS(20);
+		// in order for the stage to continue to redraw when the Ticker is paused we need to add it with
+		// the second ("pauseable") param set to false.
+		Ticker.addListener(stage,false);
+    
+    var play = new gameButton(images["bt_game"].bitmap);
+    play.x = canvas.width * 0.5;
+    play.y = 500;
+    play.onClick = function() {
+      stage.removeChild(play);
+      update = true;
+      //update = true;
+      var scGame = new gameScene();
+      stage.addChild(scGame);
+		};
+    
+    stage.addChild(play)
+  }
+  
+  function handleFileLoad(event) {
+      var img = new Image();
+      img.src = event.src;
+      img.id = event.id;
+      img.onload = function() {
+        images[event.id] = {bitmap:new Bitmap(this)};
+      };
+  }
+  
+	function tick() {
+		// this set makes it so the stage only re-renders when an event handler indicates a change has happened.
+		//if (!update) return;
+    
+    update = false; // only update once
+    stage.update();
+	}
+
+  function trace(text) {
+    console.log(text);
+  }
+
+	</script>
+  
 </head>
 
-<body onload="akakaka.start()">
-  <div id="context-game" style="width: 960px; height: 680px; margin-left: 50%; left: -480px;"></div>
+<body onload="init();">
+  
+	<div id="content">
+    <canvas id="gameCanvas" width="960" height="680"></canvas>    
+  </div>
+  
 </body>
-
 </html>
