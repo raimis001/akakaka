@@ -17,5 +17,9 @@ BODY, HTML {
   margin-right: auto ;
   border: 2px #444 solid;
 }
+#gameCanvaas {
+  width: 100%;
+  height: 100%;
+}
 
 

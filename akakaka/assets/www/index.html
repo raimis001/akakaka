@@ -1,15 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Akakaka</title>
+  
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
 	<link href="styles.css" rel="stylesheet" type="text/css" />
+  <style>*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
   
 	<script type="text/javascript" src="lib/easeljs.js"></script>
 	<script type="text/javascript" src="lib/preloadjs.js"></script>
 	<script type="text/javascript" src="lib/tweenjs.js"></script>
   
 	<script type="text/javascript" src="lib/phonegap.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
 
   <script type="text/javascript" src="js/data.js"></script>
   <script type="text/javascript" src="js/loader.js"></script>
@@ -42,13 +46,18 @@
     console.log('Init');
     
 		// create stage and point it to the canvas:
+  
 		canvas = document.getElementById("gameCanvas");
 
+    //canvasWrapper.after(
+		//	'<canvas id="overlayCanvas" width="600" height="400"></canvas>'
+		//	);
+        
 		stage = new Stage(canvas);
     Touch.enable(stage);
     
 		// enabled mouse over / out events
-		stage.enableMouseOver(10);
+		//stage.enableMouseOver(10);
     
 		// load the source image:
 		var image = new Image();
@@ -101,13 +110,13 @@
     stage.removeChild(loaderBar)
 		//Ticker.addListener(window);
     
-    Ticker.setFPS(20);
+    Ticker.setFPS(60);
 		// in order for the stage to continue to redraw when the Ticker is paused we need to add it with
 		// the second ("pauseable") param set to false.
 		Ticker.addListener(stage,false);
     
     var play = new gameButton(images["bt_game"].bitmap);
-    play.x = canvas.width * 0.5;
+    play.x =  480;
     play.y = 500;
     play.onClick = function() {
       stage.removeChild(play);
@@ -146,10 +155,8 @@
 </head>
 
 <body onload="init();">
-  
-	<div id="content">
+  <div id="content">
     <canvas id="gameCanvas" width="960" height="680"></canvas>    
   </div>
-  
 </body>
 </html>

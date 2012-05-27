@@ -18,7 +18,7 @@
             THIS.addChild(sprites[s].sprite);
           }          
 
-          THIS.x = canvas.width;
+          THIS.x = 960;//canvas.width;
           Tween.get(THIS).to({x: 0}, 1600, Ease.backOut);
           
         }

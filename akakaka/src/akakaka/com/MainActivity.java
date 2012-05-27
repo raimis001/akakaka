@@ -12,8 +12,5 @@ public class MainActivity extends DroidGap
         super.onCreate(savedInstanceState);
         super.loadUrl("file:///android_asset/www/index.html");
         
-        //WebView engine = (WebView) findViewById(R.id.web_engine);  
-        //engine.loadUrl("file:///android_asset/www/index.html"); 
-
     }
 }
